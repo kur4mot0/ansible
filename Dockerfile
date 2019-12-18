@@ -1,7 +1,7 @@
 FROM centos:latest
 COPY azure-cli.repo /etc/yum.repos.d/azure-cli.repo
 RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc
-RUN yum install -y dotnet-sdk-2.2 dotnet-runtime-2.2 azure-cli
+RUN yum install -y dotnet-sdk-2.2 dotnet-runtime-2.2 azure-cli libicu
 RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN yum update -y
