@@ -13,9 +13,9 @@ steps:
 - task: lambda3docker@0
   inputs:
     command: 'build'
-    imageBuild: 'toolstodevops/ansible:vsts'
+    imageBuild: 'toolstodevops/ansible'
 
 - task: lambda3docker@0
   inputs:
     command: 'push'
-    imageBuild: 'toolstodevops/ansible:vsts'
+    imageBuild: 'toolstodevops/ansible'
