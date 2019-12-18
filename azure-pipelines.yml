@@ -10,12 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: lambda3docker@0
+- task: Docker@2
   inputs:
-    command: 'build'
-    imageBuild: 'toolstodevops/ansible'
+    containerRegistry: 'dockerhub'
+    command: 'login'
 
-- task: lambda3docker@0
+- task: Docker@2
   inputs:
-    command: 'push'
-    imageBuild: 'toolstodevops/ansible'
+    containerRegistry: 'dockerhub'
+    repository: 'toolstodevops/ansible'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
